@@ -3,17 +3,14 @@ package com.allanwilson;
 public class Main {
 
     public static void main(String[] args) {
-        Dimensions dimensions = new Dimensions(20,20,5);
-        Case theCase = new Case("220B","Dell","240",dimensions);
-        Monitor theMonitor = new Monitor("27inch beast","Acer",27, new Resolution(2540,1440));
-        Motherboard theMotherboard = new Motherboard("BJ-200","Asus",4,6,"v2.44");
-        Keyboard theKeyboard = new Keyboard("Mechanical");
+        Sauna upstairsSauna = new Sauna(70,15,8);
+        Sink upstairsSink = new Sink(3,"Green","Marble");
+        Shower upstairsShower = new Shower(4,2);
 
-        PC thePC = new PC(theCase,theMonitor,theMotherboard,theKeyboard);
-        thePC.getMonitor().drawPixelAt(5,6,"Green");
-        thePC.getMotherboard().loadProgram("Chuckie Egg");
-        thePC.getTheCase().pressPowerButton();
-        thePC.getKeyboard().turnKeysToColor("Cyan");
-
+        Bathroom upstairsBathroom = new Bathroom(upstairsSink,upstairsSauna,upstairsShower);
+        System.out.println("Sauna capacity is: " + upstairsBathroom.getTheSauna().getCapacity());
+        System.out.println("Sink volume is (I did use a getter here): " + upstairsBathroom.getTheSink().getVolume());
+        System.out.println("The sink is made of " + upstairsBathroom.getTheSink().whatsTheSinkMadeOf() + ". I didn't use a getter here!");
+        System.out.println("The sink is made of " + upstairsBathroom.showSinkMaterial() + ". I didn't use a getter here again!");
     }
 }
